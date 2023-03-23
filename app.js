@@ -10,9 +10,47 @@ submitButton.onclick = function () {
   let Urdu = parseInt(document.getElementById("Urdu").value);
   let multiply = 100;
   let totalMarks = 600;
+  
+  // Validation for English input field
+  if (English < 0 || English > 100) {
+    alert("Please enter a valid Marks for English (between 0 and 100)");
+    return;
+  }
+  
+  // Validation for Math input field
+  if (Math < 0 || Math > 100) {
+    alert("Please enter a valid Marks for Math (between 0 and 100)");
+    return;
+  }
+  
+  // Validation for Physics input field
+  if (Physics < 0 || Physics > 100) {
+    alert("Please enter a valid Marks for Physics (between 0 and 100)");
+    return;
+  }
+  
+  // Validation for pakStudies input field
+  if (pakStudies < 0 || pakStudies > 100) {
+    alert("Please enter a valid Marks for Pak Studies (between 0 and 100)");
+    return;
+  }
+  
+  // Validation for Islamiat input field
+  if (Islamiat < 0 || Islamiat > 100) {
+    alert("Please enter a valid Marks for Islamiat (between 0 and 100)");
+    return;
+  }
+  
+  // Validation for Urdu input field
+  if (Urdu < 0 || Urdu > 100) {
+    alert("Please enter a valid Marks for Urdu (between 0 and 100)");
+    return;
+  }
+  
   let obtainedMarks = English + Math + Physics + pakStudies + Islamiat + Urdu;
   let percentage = (obtainedMarks / totalMarks) * multiply;
   let grade;
+
   if (percentage > 100) {
     grade = "invalid";
   } else if (percentage >= 80) {
@@ -30,6 +68,7 @@ submitButton.onclick = function () {
   } else if(percentage <= 1){ 
     grade = "invalid";
   }
+
   let displayText = 
 `Dear ${userName}
   \nRoll Number: ${userRollNumber},
